@@ -1,0 +1,1 @@
+web: gunicorn E_library.wsgi:application --bind 0.0.0.0:$PORT

@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-wxom&%h-#2%tbj%vpnw%%)pc5)bz92z#b2#s(u%!u$zct1vk$w
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['digital-library-roga.onrender.com', '127.0.0.1']
 
 
 # Application definition
