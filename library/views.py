@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Book
 
 def book_list(request):
@@ -13,3 +13,8 @@ def book_list(request):
 
     subjects = Book.SUBJECT_CHOICES
     return render(request, 'library/book_list.html', {'books': books, 'subjects': subjects})
+
+
+def book_detail(request, pk):
+    book = get_object_or_404(Book, pk=pk)
+    return render(request, 'library/book_detail.html', {'book': book})
