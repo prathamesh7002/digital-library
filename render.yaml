@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: e-library
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn digital_library.wsgi
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: e-library-db
+          property: connectionString
+
+databases:
+  - name: e-library-db
