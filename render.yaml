@@ -3,7 +3,8 @@ services:
     name: e-library
     env: python
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn digital_library.wsgi
+    startCommand: gunicorn digital_library.wsgi:application
+
     envVars:
       - key: DATABASE_URL
         fromDatabase:
