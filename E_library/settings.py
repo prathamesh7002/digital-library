@@ -11,12 +11,22 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
-import os
 import dj_database_url
+import os
+DATABASES = {
+    'default': dj_database_url.config(
+        default=os.getenv('postgresql://neondb_owner:npg_AGip12LYHDSM@ep-winter-dawn-a8pzb1qj-pooler.eastus2.azure.neon.tech/neondb?sslmode=require')
+    )
+}
+
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 
 # Quick-start development settings - unsuitable for production

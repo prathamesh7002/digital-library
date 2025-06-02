@@ -9,3 +9,4 @@ urlpatterns = [
     path('profile/', views.user_profile, name='user_profile'),
 
 ]
+ 
